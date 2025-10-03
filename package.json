@@ -20,6 +20,7 @@
     "devDependencies": {
         "@types/bun": "*",
         "@wxn0brp/db-core": "^0.2.3",
+        "@wxn0brp/db-storage-dir": "^0.1.2",
         "tsc-alias": "*",
         "typescript": "*"
     },

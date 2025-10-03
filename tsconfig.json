@@ -7,10 +7,14 @@
         "esModuleInterop": true,
         "skipLibCheck": true,
         "outDir": "./dist",
-        "declaration": true
+        "declaration": true,
+        "types": [
+            "@wxn0brp/db-storage-dir",
+            "@types/bun",
+        ]
     },
     "include": [
-       "./src"
+        "./src"
     ],
     "exclude": [
         "node_modules"

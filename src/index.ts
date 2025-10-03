@@ -40,7 +40,7 @@ async function waitLock(opts: LockOpts) {
     }
 }
 
-export function createLock(db: ValtheraCompatible, opts: LockOpts = {}) {
+export function createLock<T extends ValtheraCompatible>(db: T, opts: LockOpts = {}): T {
     opts = {
         file: "valthera.lock",
         stale: 5000,
@@ -56,7 +56,7 @@ export function createLock(db: ValtheraCompatible, opts: LockOpts = {}) {
             return async (...args: any[]) => {
                 await waitLock(opts);
                 try {
-                    return await origMethod(...args);
+                    return await origMethod.bind(target)(...args);
                 } finally {
                     await unlock(opts.file);
                 }
