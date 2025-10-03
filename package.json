@@ -1,0 +1,44 @@
+{
+    "name": "@wxn0brp/db-lock",
+    "version": "0.0.1",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "description": "",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wxn0brP/ValtheraDB-lock.git"
+    },
+    "homepage": "https://github.com/wxn0brP/ValtheraDB-lock",
+    "author": "wxn0brP",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "build": "tsc && tsc-alias",
+        "start": "node dist/index.js",
+        "bun": "bun run src/index.ts"
+    },
+    "devDependencies": {
+        "@types/bun": "*",
+        "@wxn0brp/db-core": "^0.2.3",
+        "tsc-alias": "*",
+        "typescript": "*"
+    },
+    "peerDependencies": {
+        "@wxn0brp/db-core": ">=0.2.3"
+    },
+    "files": [
+        "dist"
+    ],
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "default": "./dist/index.js"
+        },
+        "./*": {
+            "types": "./dist/*.d.ts",
+            "import": "./dist/*.js",
+            "default": "./dist/*.js"
+        }
+    }
+}
