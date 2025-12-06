@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "description": "",
+    "description": "Provides file-based locking for thread-safe ValtheraDB operations.",
     "repository": {
         "type": "git",
         "url": "https://github.com/wxn0brP/ValtheraDB-lock.git"
@@ -13,9 +13,7 @@
     "license": "MIT",
     "type": "module",
     "scripts": {
-        "build": "tsc && tsc-alias",
-        "start": "node dist/index.js",
-        "bun": "bun run src/index.ts"
+        "build": "tsc && tsc-alias"
     },
     "devDependencies": {
         "@types/bun": "*",
@@ -25,7 +23,8 @@
         "typescript": "*"
     },
     "peerDependencies": {
-        "@wxn0brp/db-core": ">=0.3.0"
+        "@wxn0brp/db-core": ">=0.3.0",
+        "@wxn0brp/db-storage-dir": ">=0.1.4"
     },
     "files": [
         "dist"
