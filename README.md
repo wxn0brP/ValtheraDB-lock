@@ -9,7 +9,13 @@ This package provides a locking mechanism that ensures thread-safe database oper
 ## Installation
 
 ```bash
-yarn add github:wxn0brP/ValtheraDB-lock#dist
+npm i @wxn0brp/db-lock @wxn0brp/db-core @wxn0brp/db-storage-dir
+```
+
+or
+
+```bash
+npm i @wxn0brp/db-lock @wxn0brp/db
 ```
 
 ## Features
