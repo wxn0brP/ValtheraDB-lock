@@ -1,7 +1,7 @@
 import { ValtheraCompatible } from "@wxn0brp/db-core";
 import { unlink, open, stat } from "fs/promises";
 
-const lockOp = ["add", "find", "remove", "update"];
+const lockOp = ["add", "find", "remove", "update", "toggle"];
 const hasOp = (op: string) => lockOp.some(v => op.includes(v));
 
 export interface LockOpts {
