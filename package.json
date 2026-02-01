@@ -12,6 +12,11 @@
     "author": "wxn0brP",
     "license": "MIT",
     "type": "module",
+    "keywords": [
+        "valthera",
+        "valtheradb",
+        "vdb-adapter"
+    ],
     "scripts": {
         "build": "tsc && tsc-alias"
     },
