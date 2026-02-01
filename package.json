@@ -17,14 +17,14 @@
     },
     "devDependencies": {
         "@types/bun": "*",
-        "@wxn0brp/db-core": "^0.3.0",
-        "@wxn0brp/db-storage-dir": "^0.1.4",
+        "@wxn0brp/db-core": "^0.4.0",
+        "@wxn0brp/db-storage-dir": "^0.1.6",
         "tsc-alias": "*",
         "typescript": "*"
     },
     "peerDependencies": {
-        "@wxn0brp/db-core": ">=0.3.0",
-        "@wxn0brp/db-storage-dir": ">=0.1.4"
+        "@wxn0brp/db-core": ">=0.4.0",
+        "@wxn0brp/db-storage-dir": ">=0.1.6"
     },
     "files": [
         "dist"
