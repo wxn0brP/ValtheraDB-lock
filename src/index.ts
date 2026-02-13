@@ -1,4 +1,4 @@
-import { ValtheraCompatible } from "@wxn0brp/db-core";
+import { ValtheraClass, ValtheraCompatible } from "@wxn0brp/db-core";
 import { unlink, open, stat } from "fs/promises";
 
 const lockOp = ["add", "find", "remove", "update", "toggle"];
@@ -40,7 +40,9 @@ async function waitLock(opts: LockOpts) {
     }
 }
 
-export function createLock<T extends ValtheraCompatible>(db: T, opts: LockOpts = {}): T {
+export function createLock(db: ValtheraClass, opts?: LockOpts): ValtheraClass;
+export function createLock(db: ValtheraCompatible, opts?: LockOpts): ValtheraCompatible;
+export function createLock(db: ValtheraClass, opts: LockOpts = {}) {
     opts = {
         file: "valthera.lock",
         stale: 5000,
