@@ -1,6 +1,6 @@
 {
     "name": "@wxn0brp/db-lock",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "description": "Provides file-based locking for thread-safe ValtheraDB operations.",
