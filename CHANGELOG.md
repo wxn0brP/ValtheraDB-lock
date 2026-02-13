@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/wxn0brP/ValtheraDB-lock/compare/v0.0.4...v0.0.5) (2026-02-13)
+
+
+### Bug Fixes
+
+* types ([5e292de](https://github.com/wxn0brP/ValtheraDB-lock/commit/5e292dec26df0b0f115cc0106da3611ee4b98432))
+
 ### [0.0.4](https://github.com/wxn0brP/ValtheraDB-lock/compare/v0.0.3...v0.0.4) (2026-02-13)
 
 
