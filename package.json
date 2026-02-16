@@ -22,14 +22,14 @@
     },
     "devDependencies": {
         "@types/bun": "*",
-        "@wxn0brp/db-core": "~0.7.0",
-        "@wxn0brp/db-storage-dir": "~0.2.2",
+        "@wxn0brp/db-core": "~0.8.0",
+        "@wxn0brp/db-storage-dir": "~0.2.3",
         "tsc-alias": "*",
         "typescript": "*"
     },
     "peerDependencies": {
-        "@wxn0brp/db-core": "~0.7.0",
-        "@wxn0brp/db-storage-dir": "~0.2.2"
+        "@wxn0brp/db-core": "~0.8.0",
+        "@wxn0brp/db-storage-dir": "~0.2.3"
     },
     "files": [
         "dist"
