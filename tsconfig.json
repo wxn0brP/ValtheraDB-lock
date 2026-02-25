@@ -9,7 +9,6 @@
         "outDir": "./dist",
         "declaration": true,
         "types": [
-            "@wxn0brp/db-storage-dir",
             "@types/bun",
         ]
     },
