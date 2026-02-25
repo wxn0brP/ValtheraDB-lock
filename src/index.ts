@@ -1,5 +1,5 @@
-import { ValtheraClass, ValtheraCompatible } from "@wxn0brp/db-core";
-import { unlink, open, stat } from "fs/promises";
+import { ValtheraCompatible } from "@wxn0brp/db-core";
+import { open, stat, unlink } from "fs/promises";
 
 const lockOp = ["add", "find", "remove", "update", "toggle"];
 const hasOp = (op: string) => lockOp.some(v => op.includes(v));
@@ -30,8 +30,8 @@ async function waitLock(opts: LockOpts) {
             break;
         } catch {
             try {
-                const s = await stat(opts.file);
-                if (Date.now() - s.mtimeMs > opts.stale) {
+                const stats = await stat(opts.file);
+                if (Date.now() - stats.mtimeMs > opts.stale) {
                     await unlink(opts.file);
                 }
             } catch { }
