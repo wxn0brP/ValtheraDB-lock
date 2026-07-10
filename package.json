@@ -22,12 +22,12 @@
     },
     "devDependencies": {
         "@types/bun": "*",
-        "@wxn0brp/db-core": "^0.11.0",
+        "@wxn0brp/db-core": "^0.11.5-alpha.1",
         "tsc-alias": "^1",
-        "typescript": "^6"
+        "typescript": "^7"
     },
     "peerDependencies": {
-        "@wxn0brp/db-core": "^0.11.0"
+        "@wxn0brp/db-core": "^0.11.5-alpha.1"
     },
     "files": [
         "dist"

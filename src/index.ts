@@ -1,8 +1,5 @@
-import { ValtheraCompatible } from "@wxn0brp/db-core";
+import { ValtheraPlugin } from "@wxn0brp/db-core/types/plugin";
 import { open, stat, unlink } from "fs/promises";
-
-const lockOp = ["add", "find", "remove", "update", "toggle"];
-const hasOp = (op: string) => lockOp.some(v => op.includes(v));
 
 export interface LockOpts {
     file?: string;
@@ -40,27 +37,24 @@ async function waitLock(opts: LockOpts) {
     }
 }
 
-export function createLock<T extends ValtheraCompatible>(db: T, opts: LockOpts = {}): T {
+export function createLockPlugin(opts: LockOpts = {}): ValtheraPlugin {
     opts = {
         file: "valthera.lock",
         stale: 5000,
         retryTime: 50,
         retryCount: 50,
         ...opts
-    };
-
-    return new Proxy(db, {
-        get: (target, prop) => {
-            if (!hasOp(prop.toString())) return target[prop];
-            const origMethod = target[prop];
-            return async (...args: any[]) => {
-                await waitLock(opts);
-                try {
-                    return await origMethod.bind(target)(...args);
-                } finally {
-                    await unlock(opts.file);
-                }
-            };
+    }
+    return {
+        name: "lock",
+        async execute(ctx) {
+            await waitLock(opts)
+            try {
+                return await ctx.next();
+            }
+            finally {
+                await unlock(opts.file);
+            }
         }
-    });
+    }
 }
